@@ -19,7 +19,7 @@ function App() {
 
     function handleClick() {
       const newArray = allNewDice()
-      setNumsDice(prevNum => {
+      setNumsDice(() => {
         return newArray
       })
     }
