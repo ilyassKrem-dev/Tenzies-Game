@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box
+}
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.tenzies-box{
+    display: flex;
+    width: 360px;
+    height: 379px;
+    padding: 30px 20px 29px 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background: #0B2434;
+}
+ main {
+    display: flex;
+    width: 320px;
+    height: 320px;
+    padding: 33.28px 34.56px 33.92px 34.56px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #F5F5F5;
+    padding: 20px;
+
+ }
+ .grouped-dice{
+    display: grid;
+    grid-template: auto auto/repeat(5,1fr);
+    gap: 17.92px;
+ }
+ .dice-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35.84px;
+    height: 35.84px;
+    flex-shrink: 0;
+    box-shadow: 0px 0px 5px 0px rgba(128, 128, 128, 0.45);
+    border-radius: 5px;
+    cursor: pointer;
+ }
+ 
+ .dice-num{
+    color: #2B283A;
+    font-family: Karla;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+    cursor: pointer;
+ }
