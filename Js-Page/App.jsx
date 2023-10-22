@@ -1,38 +1,44 @@
 
+import { useState } from "react"
 import Dice from "./Components/Dice"
 
 
 
 function App() {
+
     function allNewDice() {
       const randomArrayNumber = []
-      
-      for(let i=0 ; i <=10 ; i++) {
-        const randomNumber = (Math.random().toFixed(1)*10)
-          randomArrayNumber.push(randomNumber)
-        
-        
+      for(let i=0 ; i <10 ; i++) {
+        const randomNumber = Math.floor(Math.random() * 6 + 1)
+        randomArrayNumber.push(randomNumber)
       }
-      
-      console.log(randomArrayNumber)
+      return randomArrayNumber
     }
-    allNewDice()
+
+    const [numsDice , setNumsDice] = useState(allNewDice)
+
+    function handleClick() {
+      const newArray = allNewDice()
+      setNumsDice(prevNum => {
+        return newArray
+      })
+    }
+
+    const diceNumberd = numsDice.map((numDice) => {
+        return <Dice key={numDice === numDice ? numDice*Math.random() : numDice} number={numDice} />
+    })
+
+    
 
     return (
       <div className="tenzies-box">
          <main >
-            <div className="grouped-dice">
-                    <Dice number="1" />
-                    <Dice number="2" />
-                    <Dice number="3" />
-                    <Dice number="4" />
-                    <Dice number="5" />
-                    <Dice number="6" />
-                    <Dice number="7" />
-                    <Dice number="8" />
-                    <Dice number="9" />
-                    <Dice number="10"/>
-                </div>
+            <div  className="grouped-dice">
+                    {diceNumberd}
+            </div>
+            
+            <button onClick={handleClick} className="roll-dice button-text">Roll</button>
+
          </main>
       </div>
     )

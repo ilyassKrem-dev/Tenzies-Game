@@ -3,7 +3,7 @@
 function Dice(props) {
 
     return (
-        <div className="dice-div">
+        <div  className="dice-div">
             <h2 className="dice-num">{props.number}</h2>
         </div>
     )
