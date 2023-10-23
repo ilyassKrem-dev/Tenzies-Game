@@ -54,12 +54,7 @@ function App() {
       if (tenzeies) {
         setTenzies(prev => !prev)
         setRollsCount(0)
-        setNumsDice(prevDice => {
-          const newDice = prevDice.map(die => {
-            return generateNewDie()
-          })
-          return newDice
-        })
+        setNumsDice(allNewDice())
       }
         
     }
