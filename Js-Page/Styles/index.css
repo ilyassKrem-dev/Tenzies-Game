@@ -23,7 +23,7 @@ body {
  main {
     display: flex;
     width: 320px;
-    height: 320px;
+    height: 331px;
     padding: 33.28px 34.56px 33.92px 34.56px;
     justify-content: space-around;
     align-items: center;
@@ -130,8 +130,10 @@ body {
  }
 
  .rolls {
-   
    margin-top: 10px;
-   
  }
  
+
+.best-time{
+   margin-top: 6px;
+}

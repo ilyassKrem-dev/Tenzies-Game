@@ -22,13 +22,14 @@ function App() {
       return randomArrayNumber
 
     }
-    
+    const savedBestTime = JSON.parse(localStorage.getItem('best-time'))
     const [numsDice , setNumsDice] = useState(allNewDice)
     const [tenzeies , setTenzies] = useState(false)
     const [rollsCount, setRollsCount] = useState(0)
     const [timeTrack , setTimeTrack] = useState(0)
     const [changed , setChanged] = useState(false)
-    const [bestTime , setBestTime] = useState()
+    const [bestTime , setBestTime] = useState(savedBestTime || 0)
+
     useEffect(()=> {
       console.log(changed)
       let intervalId
@@ -49,9 +50,17 @@ function App() {
       if(checkCondition) {
         setTenzies(true)
         setChanged(false)
+        if(timeTrack < bestTime) {
+          setBestTime(timeTrack)
+        } else if (bestTime === 0) {
+          setBestTime(timeTrack)
+        }
       }
     }, [numsDice])
 
+    useEffect(() => {
+      localStorage.setItem('best-time' , JSON.stringify(bestTime))
+    }, [bestTime]) 
     function handleClick() {
       setChanged(true)
       setNumsDice(prevNum => {
@@ -124,7 +133,7 @@ function App() {
               <button onClick={handleClick} className="roll-dice button-text">{tenzeies ? "New Game" : "Roll"}</button>
               <p className="rolls text">Rolls: {rollsCount}</p>
             </div>
-            
+            <p className="best-time text">Best Time: {bestTime}s</p>
          </main>
       </div>
     )
