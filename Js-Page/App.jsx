@@ -26,19 +26,34 @@ function App() {
     const [numsDice , setNumsDice] = useState(allNewDice)
     const [tenzeies , setTenzies] = useState(false)
     const [rollsCount, setRollsCount] = useState(0)
-
-    
+    const [timeTrack , setTimeTrack] = useState(0)
+    const [changed , setChanged] = useState(false)
+    const [bestTime , setBestTime] = useState()
+    useEffect(()=> {
+      console.log(changed)
+      let intervalId
+      if(changed) {
+        intervalId = setInterval(() => {
+          setTimeTrack(prev => prev+1)
+        } , 1000) }
+      return () => {
+          if(intervalId) {
+            clearInterval(intervalId)
+          }
+        }
+    } , [changed])
     useEffect(() => {
       const checkCondition = numsDice.every(die => (
         die.isHeld && die.value === numsDice[0].value
       ))
       if(checkCondition) {
         setTenzies(true)
-
+        setChanged(false)
       }
     }, [numsDice])
 
     function handleClick() {
+      setChanged(true)
       setNumsDice(prevNum => {
         const newNum = prevNum.map(die => {
           if(die.isHeld) {
@@ -52,6 +67,7 @@ function App() {
       })
       setRollsCount(() => rollsCount + 1)
       if (tenzeies) {
+        setTimeTrack(0)
         setTenzies(prev => !prev)
         setRollsCount(0)
         setNumsDice(allNewDice())
@@ -60,8 +76,9 @@ function App() {
     }
 
     function handletoggle(id) {
+      setChanged(true)
       setNumsDice(prevDice => {
-        
+      
         const newDice = prevDice.map(die => {
           if (die.id === id) {
             return {
@@ -96,6 +113,7 @@ function App() {
             <p className="description">Roll until all dice are the same. 
             Click each die to freeze it at its current value between rolls.
             </p>
+            <p className="text">{timeTrack}s</p>
             <div  className="grouped-dice">
                     {diceNumberd}
             </div>
@@ -104,7 +122,7 @@ function App() {
             </p>}
             <div className="button-and-count">
               <button onClick={handleClick} className="roll-dice button-text">{tenzeies ? "New Game" : "Roll"}</button>
-              <p className="rolls">Rolls: {rollsCount}</p>
+              <p className="rolls text">Rolls: {rollsCount}</p>
             </div>
             
          </main>
