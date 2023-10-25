@@ -8,11 +8,9 @@ function App() {
   const [show , setShow] = useState(false)
 
   function showGame(pl) {
-    console.log("test")
     setShow(prev => !prev)
     setPlayer(pl)
   }
-  console.log(show)
   return (
     <div className="app-css">
       
