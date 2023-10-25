@@ -142,7 +142,7 @@ function Main2(props) {
             
            <main >
                 <div className="top-level">
-                        <p onClick={Back}>Home</p>
+                        <img src={homelg} onClick={Back} alt="" />
                         <h1 className="title">Tenzies</h1>
                 </div>
               {tenzeies && <Confetti />}

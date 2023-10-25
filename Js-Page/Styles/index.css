@@ -40,14 +40,16 @@ body {
    width: 100%;
    justify-content: flex-start;
  }
- .top-level > p {
-   color: #2B283A;
-   font-size: 15.60px;
-   font-family: Karla;
-   font-weight: 700;
-   word-wrap: break-word;
+ .top-level > img {
+   width: 10%;
    margin-right: 53px;
    cursor: pointer;
+ }
+ .top-level >img:hover {
+   opacity: 0.8;
+ }
+ .top-level > img:active {
+   opacity: 0.5;
  }
  .title{
    color: #2B283A;
@@ -160,6 +162,13 @@ body {
    border-radius: 5px;
    border: none;
    cursor: pointer;
+   transition: opacity 0.2s;
+}
+.player:hover{
+   opacity: 0.8;
+}
+.player:active{
+   opacity: 0.5;
 }
 .bu-text{
    color: white;

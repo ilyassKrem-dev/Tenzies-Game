@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import Dice from "./Dice"
 import { nanoid } from 'nanoid'
 import Confetti from 'react-confetti'
-
+import homelg from "../Logos/icon-home.svg"
 
 function Main1(props) {
     function generateNewDie() {
@@ -117,7 +117,7 @@ function Main1(props) {
            <main >
               {tenzeies && <Confetti />}
               <div className="top-level">
-                <p onClick={Back}>Home</p>
+                <img src={homelg} onClick={Back} alt="" />
                 <h1 className="title">Tenzies</h1>
               </div>
               
