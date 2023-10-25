@@ -190,7 +190,28 @@ body {
    }
    #root {
       overflow-x: scroll;
+      
    }
+   #root::-webkit-scrollbar{
+      overflow: hidden;
+   }
+   .grouped-dice {
+      display: grid;
+      grid-template: auto auto/repeat(2,1fr);
+      gap: 17.92px;
+      margin-bottom: 10px;
+   }
+   .tenzies-box {
+      width: 344px;
+      height: 650px;
+   }
+   main {
+      width: 305px;
+      height: 580px;
+   }
+   .top-level > img {
+      margin-right: 62px;
+  }
 }
 .gruped-player{
    display: flex;
