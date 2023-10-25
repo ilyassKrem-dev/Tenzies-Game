@@ -11,7 +11,7 @@ body {
 
 .tenzies-box{
     display: flex;
-    width: 360px;
+    width: 405px;
     height: 512px;
     padding: 30px 20px 29px 20px;
     flex-direction: column;
@@ -22,7 +22,7 @@ body {
 }
  main {
     display: flex;
-    width: 320px;
+    width: 370px;
     height: 438px;
     padding: 33.28px 34.56px 33.92px 34.56px;
     justify-content: space-around;
@@ -42,7 +42,7 @@ body {
  }
  .top-level > img {
    width: 10%;
-   margin-right: 53px;
+   margin-right: 75px;
    cursor: pointer;
  }
  .top-level >img:hover {
@@ -75,17 +75,7 @@ body {
     gap: 17.92px;
     margin-bottom: 10px;
  }
- .dice-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 35.84px;
-    height: 35.84px;
-    flex-shrink: 0;
-    box-shadow: 0px 0px 5px 0px rgba(128, 128, 128, 0.45);
-    border-radius: 5px;
-    cursor: pointer;
- }
+ 
  
  .dice-num{
     color: #2B283A;
@@ -144,6 +134,7 @@ body {
    font-weight: 700;
    word-wrap: break-word;
    margin: 0;
+   margin-bottom: 3px;
  }
 
  .rolls {
@@ -231,4 +222,51 @@ body {
 .time-text {
    margin-top: 10px;
 }
+.dice-div {
+   box-shadow: 0px 0px 5px 0px rgba(128, 128, 128, 0.45);
+   border-radius: 5px;
+   cursor: pointer;
+}
+.face {
+	display: grid;
+	grid-template-areas:
+		"a . c"
+		"e g f"
+		"d . b";
 
+	flex: 0 0 auto;
+	padding: 5px;
+	width: 50px;
+	height: 50px;
+}
+
+.pip {
+	display: block;
+	align-self: center;
+	justify-self: center;
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	background-color: #333;
+	box-shadow: inset 0 3px #111, inset 0 -3px #555;
+}
+
+.pip:nth-child(2) {
+	grid-area: b;
+}
+.pip:nth-child(3) {
+	grid-area: c;
+}
+.pip:nth-child(4) {
+	grid-area: d;
+}
+.pip:nth-child(5) {
+	grid-area: e;
+}
+.pip:nth-child(6) {
+	grid-area: f;
+}
+/* This selects the last pip of odd-valued dice (1, 3, 5) and positions the pip in the center */
+.pip:nth-child(odd):last-child {
+	grid-area: g;
+}

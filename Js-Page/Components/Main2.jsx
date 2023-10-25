@@ -123,7 +123,14 @@ function Main2(props) {
     function Back() {
         props.show(false)
     }
-
+    let winningText = "";
+    if (player1Time === player2Time) {
+      winningText = "Draw"
+    } else if (player1Time<player2Time) {
+      winningText ="Player 1 win's"
+    } else {
+      winningText= "Player 2 win's"
+    }
     const diceNumberd = numsDice.map((numDice) => {
         return <Dice 
             key={numDice.id}
@@ -145,7 +152,7 @@ function Main2(props) {
                         <img src={homelg} onClick={Back} alt="" />
                         <h1 className="title">Tenzies</h1>
                 </div>
-              {tenzeies && <Confetti />}
+              {tenzeies && winningText !== "Draw" && <Confetti />}
               
               
               <p className="description">Roll until all dice are the same. 
@@ -156,7 +163,7 @@ function Main2(props) {
                       {diceNumberd}
               </div>
               {tenzeies && <p className="winning">
-                {player1Time<player2Time ? "Player 1 win's" : "Player 2 win's"}
+                {`${winningText}`}
               </p>}
               <div className="button-and-count">
                 {tenzeies && <button onClick={handleClick} className="roll-dice button-text">{tenzeies ? "New Game" : "Roll"}</button>}
