@@ -12,7 +12,7 @@ body {
 .tenzies-box{
     display: flex;
     width: 360px;
-    height: 379px;
+    height: 512px;
     padding: 30px 20px 29px 20px;
     flex-direction: column;
     justify-content: center;
@@ -23,7 +23,7 @@ body {
  main {
     display: flex;
     width: 320px;
-    height: 331px;
+    height: 438px;
     padding: 33.28px 34.56px 33.92px 34.56px;
     justify-content: space-around;
     align-items: center;
@@ -33,6 +33,21 @@ body {
     padding: 20px;
     flex-direction: column;
 
+ }
+ .top-level{
+   display: flex;
+   align-items: center;
+   width: 100%;
+   justify-content: flex-start;
+ }
+ .top-level > p {
+   color: #2B283A;
+   font-size: 15.60px;
+   font-family: Karla;
+   font-weight: 700;
+   word-wrap: break-word;
+   margin-right: 53px;
+   cursor: pointer;
  }
  .title{
    color: #2B283A;
@@ -45,7 +60,7 @@ body {
  .description {
    color: #4A4E74;
    font-size: 13.11px;
-   font-family: Inter;
+   font-family: Inter , Arial;
    font-weight: 400;
    word-wrap: break-word;
    text-align: center;
@@ -72,7 +87,7 @@ body {
  
  .dice-num{
     color: #2B283A;
-    font-family: Karla;
+    font-family: Karla , Arial;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 700;
@@ -94,7 +109,7 @@ body {
  .button-text {
     color: white;
     font-size: 16.38px;
-    font-family: Karla;
+    font-family: Karla , Arial;
     font-weight: 700;
     word-wrap: break-word;
  }
@@ -110,7 +125,7 @@ body {
  .winning{
    color: lightgreen;
    font-size: 16.38px;
-   font-family: Karla;
+   font-family: Karla , Arial;
    font-weight: 700;
    word-wrap: break-word;
    margin: 0px 8px 8px 8px;
@@ -123,7 +138,7 @@ body {
  .text {
    color: black;
    font-size: 16.38px;
-   font-family: Karla;
+   font-family: Karla , Arial;
    font-weight: 700;
    word-wrap: break-word;
    margin: 0;
@@ -136,4 +151,74 @@ body {
 
 .best-time{
    margin-top: 6px;
+}
+
+.player{
+   padding: 20px;
+   margin: 30px;
+   background-color: #5035FF;
+   border-radius: 5px;
+   border: none;
+   cursor: pointer;
+}
+.bu-text{
+   color: white;
+   font-size: 16.38px;
+   font-family: Karla , Arial;
+   font-weight: 700;
+   word-wrap: break-word;
+}
+
+.title{
+   text-align: center;
+   font-size: 30.38px;
+   font-family: Karla , Arial;
+   font-weight: 700;
+}
+.grouped {
+   display: flex;
+   flex-direction: column;
+}
+.button-group {
+   display: flex;
+}
+
+@media (max-width: 350px) {
+   .button-group {
+      display: flex;
+      flex-direction: column;
+   }
+   #root {
+      overflow-x: scroll;
+   }
+}
+.gruped-player{
+   display: flex;
+   width: 100%;
+   justify-content: space-around;
+}
+.player-text{
+   margin: 0;
+   margin-bottom: 0px;
+   font-size: 16.38px;
+   font-family: Karla , Arial;
+   font-weight: 700;
+   word-wrap: break-word;
+}
+.player-box {
+   background-color: white;
+   padding: 10px;
+   border-radius: 10px 10px 0px 0px;
+}
+
+.shadow{
+   box-shadow: inset 0px 0px 0px 20px #00000069;
+}
+.grouped-time{
+   display: flex;
+   width: 100%;
+   justify-content: space-around;
+}
+.time-text {
+   margin-top: 10px;
 }
